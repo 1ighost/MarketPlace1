@@ -10,7 +10,6 @@ import java.util.List;
 @Getter
 @Setter
 @EqualsAndHashCode
-@ToString
 @NoArgsConstructor
 @Entity
 public class Customer {
@@ -23,7 +22,6 @@ public class Customer {
     private String lastName;
     private double wallet;
 
-    @Transient
     @OneToMany
     private List<Product> bucket;
 }
