@@ -22,6 +22,14 @@ public class Customer {
     private String lastName;
     private double wallet;
 
-    @OneToMany
+    @Setter(AccessLevel.NONE)
+    @OneToMany(fetch = FetchType.EAGER)
     private List<Product> bucket;
+
+    @Override
+    public String toString() {
+        return "Name: " + this.firstName +
+                "; \nLast name: " + this.lastName +
+                "\n " + this.bucket.toString();
+    }
 }
